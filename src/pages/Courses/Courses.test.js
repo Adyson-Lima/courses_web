@@ -1,5 +1,5 @@
 import { render, screen} from "@testing-library/react";
-import Courses from "./Courses";
+import Courses from "./index";
 
 test("Existe card em Courses.js?", () => {
   render(<Courses />);

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 export default function Courses(){
   return(
@@ -6,6 +7,9 @@ export default function Courses(){
         Courses Crud
       </div>
       <div className="card-body">
+
+        <button className="btn btn-success" style={{marginBottom: '10px'}}
+      to="/">Novo</button>
 
       </div>
     </div>
