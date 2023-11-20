@@ -1,4 +1,4 @@
-# Front-end React "courses_web", para a api em Ruby on Rails <a href="">courses_api</a>.
+# Front-end React "courses_web", para a api em Ruby on Rails <a href="https://github.com/Adyson-Lima/courses_api">courses_api</a>.
 
 # Imagens da aplicação
 <p align="center"><img src="" alt="logo" width="600" height="400"></p>
@@ -8,7 +8,7 @@
 - React
 - Axios
 - Bootstrap
-- Cypress
+- TDD
 
 # Como executar o projeto
 
