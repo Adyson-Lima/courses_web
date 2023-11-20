@@ -1,9 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test("Existe card em App.js?", () => {
+test("Existe card em Courses/index?", () => {
   render(<App />);
   const linkElement = screen.getByText(/Courses Crud/i);
+  expect(linkElement).toBeInTheDocument();
+});
+
+test("Existe botão novo em Courses/index?", () => {
+  render(<App />);
+  const linkElement = screen.getByText(/Novo/i);
   expect(linkElement).toBeInTheDocument();
 });
 

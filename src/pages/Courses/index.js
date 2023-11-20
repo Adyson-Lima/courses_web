@@ -8,8 +8,9 @@ export default function Courses(){
       </div>
       <div className="card-body">
 
-        <button className="btn btn-success" style={{marginBottom: '10px'}}
-      to="/">Novo</button>
+        {/* botão para criar novo */}
+        <Link className="btn btn-success" style={{marginBottom: '10px'}}
+      to="/">Novo</Link>
 
       </div>
     </div>
