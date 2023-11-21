@@ -12,6 +12,36 @@ export default function Courses(){
         <Link className="btn btn-success" style={{marginBottom: '10px'}}
       to="/">Novo</Link>
 
+      {/* tabela */}
+      <table className="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Value</th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                <th scope="row"></th>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <button type="button"
+                    className="btn btn-outline-info"
+                    style={{margin: '2px'}}
+                    >Editar</button>
+
+                    <button type="button"
+                    className="btn btn-outline-danger"
+                    style={{margin: '2px'}}
+                    >Apagar</button>
+                  </td>
+              </tr>
+            </tbody>
+        </table>
+
       </div>
     </div>
   );
