@@ -22,7 +22,13 @@ test("Existe tabela em Courses/index?", () => {
 test("Existe botão Editar em Courses/index?", () => {
   render(<App />);
   const buttonElement = screen.getByRole("button");
-  expect(buttonElement).toHaveClass("btn");
+  expect(buttonElement).toHaveTextContent("Editar");
+});
+
+test("Existe botão Excluir em Courses/index?", () => {
+  render(<App />);
+  const buttonElement = screen.getByRole("button");
+  expect(buttonElement).toHaveText("Excluir");
 });
 
 
