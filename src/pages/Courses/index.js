@@ -27,7 +27,12 @@ export default function Courses(){
                 <th scope="row"></th>
                   <td></td>
                   <td></td>
-                  <td></td>
+                  <td>
+                    <button type="button"
+                    className="btn btn-outline-info"
+                    style={{margin: '2px'}}
+                    >Editar</button>
+                  </td>
               </tr>
             </tbody>
         </table>
