@@ -13,6 +13,12 @@ test("Existe botão novo em Courses/index?", () => {
   expect(linkElement).toBeInTheDocument();
 });
 
+test("Existe tabela em Courses/index?", () => {
+  render(<App />);
+  const tableElement = screen.getByRole("table");
+  expect(tableElement).toHaveClass("table");
+});
+
 
 
 
