@@ -19,6 +19,12 @@ test("Existe tabela em Courses/index?", () => {
   expect(tableElement).toHaveClass("table");
 });
 
+test("Existe botão Editar em Courses/index?", () => {
+  render(<App />);
+  const buttonElement = screen.getByRole("button");
+  expect(buttonElement).toHaveClass("btn");
+});
+
 
 
 
