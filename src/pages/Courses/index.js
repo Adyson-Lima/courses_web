@@ -32,7 +32,7 @@ export default function Courses(){
 
         {/* botão para criar novo */}
         <Link className="btn btn-success" style={{marginBottom: '10px'}}
-      to="/">Novo</Link>
+      to="/newupdate">Novo</Link>
 
       {/* inicio tabela */}
       <table className="table table-hover">
