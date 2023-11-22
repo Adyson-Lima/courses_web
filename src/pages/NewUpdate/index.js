@@ -1,5 +1,5 @@
-import {Link, useNavigate} from "react-router-dom";
-import React, {useState} from "react";
+import {Link, useNavigate, useParams} from "react-router-dom";
+import React, {useState, useEffect} from "react";
 import api from "../../services/api";
 
 export default function NewUpdate(){
@@ -9,20 +9,54 @@ export default function NewUpdate(){
 
   const navigate = useNavigate();
 
-  // CREATE, cria course na api
-  async function createCourse(e){
+  // O nome course_id, é o mesmo definido na rota
+  const {course_id} = useParams();
+
+  // CREATE/UPDATE, cria/atualiza course na api
+  async function saveOrUpdateCourse(e){
     e.preventDefault();
 
     const data = {name, value};
 
-    try{
-      await api.post('/api/v1/courses', data, {});
-      navigate("/");
-    }catch(err){
-      alert("Erro ao salvar curso!");
+    if(course_id === "0"){
+
+      try {
+        await api.post('/api/v1/courses', data, {});
+        navigate("/");
+      }catch(err){
+        alert("Erro ao salvar curso!");
+      }
+
+    }else{
+      try {
+        await api.patch(`/api/v1/courses/${course_id}`, data, {});
+        navigate("/");
+      }catch(err){
+        alert("Erro ao atualizar curso!");
+      }
     }
 
   }
+
+  async function loadCourse(){
+    try{
+      const response = await api.get(`/api/v1/courses/${course_id}`,{});
+
+      setName(response.data.name);
+      setValue(response.data.value);
+    }catch(err){
+      alert("Erro ao carregar curso!");
+      navigate("/");
+    }
+  }
+
+  useEffect(() => {
+    if(course_id === "0"){
+      return;
+    }else{
+      loadCourse();
+    }
+  },[course_id]);
 
   return(
     <div className="card border-primary" style={{marginTop: '20px'}} >
@@ -34,7 +68,7 @@ export default function NewUpdate(){
       <Link className="btn btn-dark" style={{marginBottom: '5px'}}
       to="/">Home</Link>
 
-      <form onSubmit={createCourse}>
+      <form onSubmit={saveOrUpdateCourse}>
             <div className="form-group">
               <label htmlFor="name">Name</label>
 

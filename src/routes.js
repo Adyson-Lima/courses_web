@@ -7,7 +7,7 @@ export default function CoursesRouter(){
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Courses />}/>
-        <Route path="/newupdate" element={<NewUpdate />}/>
+        <Route path="/newupdate/:course_id" element={<NewUpdate />}/>
       </Routes>
     </BrowserRouter>
   );
