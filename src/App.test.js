@@ -3,13 +3,13 @@ import App from './App';
 
 test("Existe card em Courses/index?", () => {
   render(<App />);
-  const linkElement = screen.getByText(/Courses Crud/i);
+  const linkElement = screen.getByText("Courses Crud");
   expect(linkElement).toBeInTheDocument();
 });
 
-test("Existe botão novo em Courses/index?", () => {
+test("Existe botão Novo em Courses/index?", () => {
   render(<App />);
-  const linkElement = screen.getByText(/Novo/i);
+  const linkElement = screen.getByText("Novo");
   expect(linkElement).toBeInTheDocument();
 });
 
